@@ -3,7 +3,6 @@
 class datos
 {
 
-
     // Declaración de propiedades protegidas y privadas
     protected $db;
 
@@ -25,9 +24,8 @@ class datos
 
 
     // Constructor privado que recibe un objeto PDO como parámetro
-    public function __construct(PDO $connection)
+    public function __construct( $connection)
     {
-
         // Asigna la conexión a la propiedad $db    
         $this -> db = $connection;
     }
@@ -132,15 +130,15 @@ class datos
             ":email"      => $this -> email,
             ":phone"      => $this -> phone,
             ":date_birth" => $this -> date_birth,
-
-            // $stm->bindValue(':firts_name', $this->firts_name),
-            // $stm->bindValue(':last_name', $this->last_name),
-            // $stm->bindValue(':email', $this->email),
-            // $stm->bindValue(':phone', $this->phone),
-            // $stm->bindValue(':date_birth', $this->date_birth),
-
+            
         ];
+        // $stm->bindValue(':firts_name', $this->firts_name),
+        // $stm->bindValue(':last_name', $this->last_name),
+        // $stm->bindValue(':email', $this->email),
+        // $stm->bindValue(':phone', $this->phone),
+        // $stm->bindValue(':date_birth', $this->date_birth),
         // Ejecutar la consulta preparada con los valores proporcionados
+
         $stm->execute($marcadores);
         return true;
     }

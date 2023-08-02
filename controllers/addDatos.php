@@ -12,7 +12,7 @@ require_once ('models/UserModel.php');
 
 
 // Crea una instancia de la clase Database para interactuar con la base de datos.
-$data = new Databe();
+$data = new Database();
 
 // Obtiene una conexión a la base de datos utilizando el método getConnection() de la clase Database.
 $connection = $data -> getConnection();

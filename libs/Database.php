@@ -1,7 +1,7 @@
 <?php
 
 // Declaración de una clase que encapsula la lógica para conectar a la base de datos usando PDO
-class Databe{
+class Database{
 
     //Declaración de una propiedad privada llamada $connection que almacenará la conexión a la base de datos
     private $connection;
