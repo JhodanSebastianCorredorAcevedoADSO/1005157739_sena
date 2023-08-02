@@ -85,8 +85,12 @@
 
             <!-- Bloque PHP las inclusiones de clases y controladores que podrían estar relacionados con la manipulación de datos del formulario. -->
             <?php
-            session_start();
+            // session_start();
+            require "config/config.php";
+            require "controllers/addDatos.php";
             require "controllers/UserController.php";
+            require "libs/Database.php";
+            require "models/UserModel.php";
             // require "controllers/addDatos.php";
             ?>
         </div>
