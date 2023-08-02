@@ -33,7 +33,7 @@
             </h1>
 
             <!-- Inicio del formulario que se enviará a index.php usando el método HTTP POST. El formulario tiene una clase "row" para la disposición en filas. -->
-            <form action="index.php" method="post" id="formulario" class="row">
+            <form action="../controllers/addDatos.php" method="post" id="formulario" class="row">
 
                 <!-- Campo para el primer nombre -->
                 <div class="col-md-6 offset-md-3">
@@ -73,7 +73,7 @@
                     <!-- titulo que se relacionara con la opcion de ingreso de datos -->
                     <label class="form-label">date_birth</label>
                     <!-- ingreso de los datos con respecto a sus requerimientos -->
-                    <input type="text" name="date_birth" id="date_birth" class="form-control">
+                    <input type="date" name="date_birth" id="date_birth" class="form-control">
                 </div>
 
                 <!-- Un botón de envío del formulario con estilos de Bootstrap. -->
@@ -84,12 +84,7 @@
             </form>
 
             <!-- Bloque PHP las inclusiones de clases y controladores que podrían estar relacionados con la manipulación de datos del formulario. -->
-            <?php
-            // session_start();
-            require "controllers/UserController.php";
-            require "config/config.php";
-            // require "controllers/addDatos.php";
-            ?>
+            
         </div>
     </div>
     

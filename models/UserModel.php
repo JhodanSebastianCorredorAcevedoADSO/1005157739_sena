@@ -121,25 +121,22 @@ class datos
     function addDatos()
     {
         // Preparar una sentencia SQL para la inserción
-        $stm = $this->db->prepare("INSERT INTO profiles (firts_name, last_name, email, phone, date_birth) VALUES (:firts_name, :last_name, :email, :phone, :date_birth)");
-
-        // Array de marcadores de posición y valores correspondientes
-        $marcadores = [
-            ":firts_name" => $this -> firts_name,
-            ":last_name"  => $this -> last_name,
-            ":email"      => $this -> email,
-            ":phone"      => $this -> phone,
-            ":date_birth" => $this -> date_birth,
-            
-        ];
-        // $stm->bindValue(':firts_name', $this->firts_name),
-        // $stm->bindValue(':last_name', $this->last_name),
-        // $stm->bindValue(':email', $this->email),
-        // $stm->bindValue(':phone', $this->phone),
-        // $stm->bindValue(':date_birth', $this->date_birth),
-        // Ejecutar la consulta preparada con los valores proporcionados
-
-        $stm->execute($marcadores);
-        return true;
+        $sql = "INSERT INTO profiles (first_name, last_name, email, phone, date_birth, id_user) VALUES (:firs, :lastt, :corre, :tele, :dat, :id_user)";
+        $stm = $this->db->prepare($sql);
+        $stm->bindValue(':firs', $this->firts_name);
+        $stm->bindValue(':lastt', $this->last_name);
+        $stm->bindValue(':corre', $this->email);
+        $stm->bindValue(':tele', $this->phone);
+        $stm->bindValue(':dat', $this->date_birth);
+        $stm->bindValue(':id_user', 1);
+    
+        try {
+            $stm->execute();
+            return true; // Successful insertion
+        } catch (PDOException $e) {
+            // Handle the exception or error here
+            // You can log the error, display a user-friendly message, etc.
+            return false; // Insertion failed
+        }
     }
 }

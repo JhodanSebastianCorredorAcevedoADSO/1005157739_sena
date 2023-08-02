@@ -1,13 +1,15 @@
 <?php
 
 // Incluye el archivo de configuración que contiene constantes y configuraciones importantes.
-require_once ('config/config.php');
+require_once ('../config/config.php');
 
 // Incluye la clase Database, que esta relacionada con la conexión a la base de datos.
-require_once ('libs/Database.php');
+require_once ('../libs/Database.php');
 
 // Incluye el modelo UserModel, que está relacionado con la manipulación de datos de profiles
-require_once ('models/UserModel.php');
+require_once ('../models/UserModel.php');
+
+require_once ('../Controllers/UserController.php');
 
 
 
@@ -23,7 +25,7 @@ $datosModel = new datos($connection);
 
 
 // Verifica si se han enviado datos a través del método POST y si están configurados ciertos campos.
-if (isset($_POST['firts_name']) && isset($_POST['firts_name']) != "" && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['date_birth'])) {
+if (isset($_POST['firts_name']) ) {
 
     // Obtiene los valores de los campos enviados a través del método POST.
     $firts_name = ($_POST['firts_name']);
@@ -41,4 +43,7 @@ if (isset($_POST['firts_name']) && isset($_POST['firts_name']) != "" && isset($_
 
     // Llama al método addDatos() en la instancia de datos (modelo) para agregar los datos a la base de datos.
     $datosModel->addDatos();
+
+} else {
+    echo "Faltan datos del formulario.";
 }
