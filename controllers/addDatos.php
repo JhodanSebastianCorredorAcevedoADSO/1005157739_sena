@@ -15,7 +15,7 @@ require_once('models/UserModel.php');
 $data = new Database();
 
 // Obtiene una conexión a la base de datos utilizando el método getConnection() de la clase Database.
-$connection = $data->getConnection();
+$connection = $data -> getConnection();
 
 // Crea una instancia de la clase "datos"  y pasa la conexión de la base de datos como parámetro.
 $datosModel = new datos($connection);
@@ -23,7 +23,7 @@ $datosModel = new datos($connection);
 
 
 // Verifica si se han enviado datos a través del método POST y si están configurados ciertos campos.
-if (isset($_POST['firts_name']) && isset($_POST['last_name']) != "" && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['date_birth'])) {
+if (isset($_POST['firts_name']) && isset($_POST['firts_name']) != "" && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['date_birth'])) {
 
     // Obtiene los valores de los campos enviados a través del método POST.
     $firts_name = ($_POST['firts_name']);

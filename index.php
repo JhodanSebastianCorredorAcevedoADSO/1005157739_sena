@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     
     <!-- Establece el título de la página que se muestra en la pestaña del navegador. -->
-    <title>Interés</title> 
+    <title>Prueba</title> 
     
     <!-- Enlace de Bootstrap para aplicar estilos predefinidos. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
@@ -85,9 +85,9 @@
 
             <!-- Bloque PHP las inclusiones de clases y controladores que podrían estar relacionados con la manipulación de datos del formulario. -->
             <?php
-            // session_start();
-            require_once "controllers/UserController.php";
-            // require_once "controllers/addDatos.php";
+            session_start();
+            require "controllers/UserController.php";
+            // require "controllers/addDatos.php";
             ?>
         </div>
     </div>
