@@ -9,6 +9,7 @@ require_once ('../libs/Database.php');
 // Incluye el modelo UserModel, que está relacionado con la manipulación de datos de profiles
 require_once ('../models/UserModel.php');
 
+// validamos los datos 
 require_once ('../Controllers/UserController.php');
 
 
