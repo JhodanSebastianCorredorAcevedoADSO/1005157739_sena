@@ -36,26 +36,33 @@ if (isset($_POST['firts_name'])) {
     }
 }
 
-// Si existen datos almacenados en la sesión para imprimir, muestra una tabla con los datos
-if (!empty($_SESSION['imprimir'])) {
-    echo '<table>';
-    echo '
-            <th>firts_name</th>
-            <th>last_name</th>
-            <th>email</th>
-            <th>phone</th>
-            <th>date_birth</th>';
+// function listar(){
 
-    // Itera a través de los datos almacenados en la sesión para imprimirlos en la tabla
-    foreach ($_SESSION['imprimir'] as $itm) {
-        echo '<tr>';
-        echo '<td style="padding: 10px;">' . $itm['firts_name'] . '</td>';
-        echo '<td style="padding: 10px;">' . $itm['last_name'] . '</td>';
-        echo '<td style="padding: 10px;">' . $itm['email'] . '</td>';
-        echo '<td style="padding: 10px;">' . $itm['phone'] . '</td>';
-        echo '<td style="padding: 10px;">' . $itm['date_birth'] . '</td>';
-        echo '</tr>';
-    }
-    echo '</table>';
-}
+//     // Si existen datos almacenados en la sesión para imprimir, muestra una tabla con los datos
+// if (!empty($_SESSION['imprimir'])) {
+//     echo '<table>';
+//     echo '
+//             <th>firts_name</th>
+//             <th>last_name</th>
+//             <th>email</th>
+//             <th>phone</th>
+//             <th>date_birth</th>';
+
+//     // Itera a través de los datos almacenados en la sesión para imprimirlos en la tabla
+//     foreach ($_SESSION['imprimir'] as $itm) {
+//         echo '<tr>';
+//         echo '<td style="padding: 10px;">' . $itm['firts_name'] . '</td>';
+//         echo '<td style="padding: 10px;">' . $itm['last_name'] . '</td>';
+//         echo '<td style="padding: 10px;">' . $itm['email'] . '</td>';
+//         echo '<td style="padding: 10px;">' . $itm['phone'] . '</td>';
+//         echo '<td style="padding: 10px;">' . $itm['date_birth'] . '</td>';
+//         echo '</tr>';
+//     }
+//     echo '</table>';
+    
+// }
+
+
+
+// }
 

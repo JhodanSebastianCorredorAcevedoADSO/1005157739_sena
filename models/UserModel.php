@@ -116,19 +116,27 @@ class datos
     }
 
 
+    function Listar(){
+        $stm = $this->db->prepare("SELECT * FROM profiles");
+        $stm->execute();
+        return $stm->fetchAll();
+    }
 
     // Método para agregar datos a la base de datos
     function addDatos()
     {
         // Preparar una sentencia SQL para la inserción
-        $sql = "INSERT INTO profiles (first_name, last_name, email, phone, date_birth, id_user) VALUES (:firs, :lastt, :corre, :tele, :dat, :id_user)";
+        $sql = "INSERT INTO profiles (first_name, last_name, email, phone, date_birth,id_user) VALUES (:firs, :lastt, :corre, :tele, :dat, :uno)";
         $stm = $this->db->prepare($sql);
         $stm->bindValue(':firs', $this->firts_name);
         $stm->bindValue(':lastt', $this->last_name);
         $stm->bindValue(':corre', $this->email);
         $stm->bindValue(':tele', $this->phone);
         $stm->bindValue(':dat', $this->date_birth);
-        $stm->bindValue(':id_user', 1);
+        $stm->bindValue(':uno', 1);
+
+
+        
     
         try {
             $stm->execute();
@@ -139,4 +147,15 @@ class datos
             return false; // Insertion failed
         }
     }
+
+    function eliminar(){
+        $stm = $this->db->prepare("DELETE FROM profiles WHERE id=:id");
+        $stm->bindValue(':id', $this->id);
+        $stm->execute();
+        header('Location: ../vista/index.php');
+    }
+
+
+
+    
 }

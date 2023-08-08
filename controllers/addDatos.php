@@ -34,8 +34,12 @@ if (isset($_POST['firts_name']) ) {
     $email      = ($_POST['email']);
     $phone      = ($_POST['phone']);
     $date_birth = ($_POST['date_birth']);
+    
+    
 
     // Configura los valores en la instancia de datos (modelo) utilizando métodos set.
+
+    
     $datosModel  ->  setfirts_name  ($firts_name);
     $datosModel  ->  setlast_name   ($last_name);
     $datosModel  ->  setemail       ($email);
@@ -44,7 +48,18 @@ if (isset($_POST['firts_name']) ) {
 
     // Llama al método addDatos() en la instancia de datos (modelo) para agregar los datos a la base de datos.
     $datosModel->addDatos();
+    
 
+    
+    header('Location: ../vista/index.php');
+    exit;
 } else {
     echo "Faltan datos del formulario.";
+};
+
+if(isset($_POST['eliminar'])){
+    $id = $_POST['identificador'];
+    $datosModel->setid($id);
+    $datosModel->eliminar();
+
 }
