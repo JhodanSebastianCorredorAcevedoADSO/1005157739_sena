@@ -33,7 +33,7 @@ class datos
     // Métodos mágicos para establecer los valores de las propiedades
     function setid($id)
     {
-        $this->$id = $id;
+        $this->id = $id;
     }
 
     function setfirts_name($firts_name)
@@ -149,13 +149,12 @@ class datos
     }
 
     function eliminar(){
+        // echo $this->id;
         $stm = $this->db->prepare("DELETE FROM profiles WHERE id=:id");
         $stm->bindValue(':id', $this->id);
         $stm->execute();
         header('Location: ../vista/index.php');
     }
-
-
 
     
 }
